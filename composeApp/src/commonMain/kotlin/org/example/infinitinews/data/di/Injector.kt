@@ -10,8 +10,11 @@ import io.ktor.client.plugins.logging.Logger
 import io.ktor.client.plugins.logging.Logging
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
+import org.example.infinitinews.data.API_KEY
+import org.example.infinitinews.data.API_KEY_HEADER
+import org.example.infinitinews.data.BASE_URL
 import org.example.infinitinews.data.network.NetworkService
-import org.example.infinitinews.data.repository.NewsRepositoryImpl
+import org.example.infinitinews.domain.repository.NewsRepositoryImpl
 import org.example.infinitinews.domain.interactor.AllNewsUseCase
 import org.example.infinitinews.domain.interactor.HeadlinesUseCase
 import org.example.infinitinews.ui.viewmodels.MainViewModel
@@ -24,8 +27,8 @@ val provideNetworkModule = module {
     ): HttpClient {
         return HttpClient {
             defaultRequest {
-                url("https://newsapi.org/v2/")
-                headers.append("X-Api-Key", "")
+                url(BASE_URL)
+                headers.append(API_KEY_HEADER, API_KEY)
             }
             install(Logging) {
                 logger = Logger.DEFAULT

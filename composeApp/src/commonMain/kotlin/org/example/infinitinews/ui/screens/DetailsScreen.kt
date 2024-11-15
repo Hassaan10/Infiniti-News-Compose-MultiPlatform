@@ -38,7 +38,7 @@ fun DetailsScreen(urlToImage: String?, title:String?, description:String?, conte
             IconButton(onClick = { navigateToBack.invoke() }) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Localized description"
+                    contentDescription = null
                 )
             }
         }

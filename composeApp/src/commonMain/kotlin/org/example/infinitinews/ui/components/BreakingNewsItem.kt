@@ -16,7 +16,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import infinitinews.composeapp.generated.resources.Res
+import infinitinews.composeapp.generated.resources.compose_multiplatform
 import org.example.infinitinews.data.model.Article
+import org.jetbrains.compose.resources.painterResource
 
 @Composable
 fun BreakingNewsItem(article: Article, onItemClick: (Article) -> Unit) {
@@ -28,6 +31,7 @@ fun BreakingNewsItem(article: Article, onItemClick: (Article) -> Unit) {
         }) {
         Box(contentAlignment = Alignment.BottomCenter) {
             AsyncImage(
+                placeholder = painterResource(Res.drawable.compose_multiplatform),
                 modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.FillBounds,
                 model = article.urlToImage, contentDescription = null

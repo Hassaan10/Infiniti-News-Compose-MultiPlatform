@@ -23,6 +23,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.example.infinitinews.data.network.ApiResponse
 import org.example.infinitinews.ui.viewmodels.MainViewModel
 import kotlinx.coroutines.launch
+import org.example.infinitinews.data.BREAKING_NEWS
+import org.example.infinitinews.data.WHATS_HAPPENING_AROUND_THE_WORLD
 import org.example.infinitinews.data.model.Article
 
 
@@ -36,7 +38,7 @@ fun BreakingNewsSection(viewModel: MainViewModel, snackbarState: SnackbarHostSta
             is ApiResponse.Success -> {
                 Column  {
                     uiState.data?.let { articles ->
-                        Text(text = "Breaking News", modifier = Modifier.padding(start = 20.dp), style = TextStyle(color = Color.Red, textAlign = TextAlign.Center, fontWeight = FontWeight.Bold, fontSize = TextUnit(20F, TextUnitType.Sp)))
+                        Text(text = BREAKING_NEWS, modifier = Modifier.padding(start = 20.dp), style = TextStyle(color = Color.Red, textAlign = TextAlign.Center, fontWeight = FontWeight.Bold, fontSize = TextUnit(20F, TextUnitType.Sp)))
                         LazyRow(modifier = Modifier.padding(start = 10.dp)) {
                             items(articles.size) { index ->
                                 val article = articles[index]
@@ -76,7 +78,7 @@ fun AllNewsSection(viewModel: MainViewModel, snackbarState: SnackbarHostState, o
             is ApiResponse.Success -> {
                 Column  {
                     uiState.data?.let { articles ->
-                        Text(text = "What's happening around the world", modifier = Modifier.padding(start = 20.dp), style = TextStyle(color = Color.Red, textAlign = TextAlign.Center, fontWeight = FontWeight.Bold, fontSize = TextUnit(20F, TextUnitType.Sp)))
+                        Text(text = WHATS_HAPPENING_AROUND_THE_WORLD, modifier = Modifier.padding(start = 20.dp), style = TextStyle(color = Color.Red, textAlign = TextAlign.Center, fontWeight = FontWeight.Bold, fontSize = TextUnit(20F, TextUnitType.Sp)))
                         LazyColumn(modifier = Modifier.padding(start = 10.dp)) {
                             items(articles.size) { index ->
                                 val article = articles[index]
