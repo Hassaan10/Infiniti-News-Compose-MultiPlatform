@@ -20,8 +20,8 @@ git clone https://github.com/Hassaan10/Infiniti-News-Android.git
 cd Infiniti-News-Compose-MultiPlatform
 ```
 
-### 3. Add your API key into Injector file
-X-Api-Key = 'YOUR_API_KEY';
+### 3. Add your API key into Constants file
+API_KEY = 'YOUR_API_KEY';
 
 
 
