@@ -16,7 +16,7 @@ News app made in Compose Multiplatform with clean architecture using using MVI. 
 ## Installation
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/Hassaan10/Infiniti-News-Android.git
+git clone https://github.com/Hassaan10/Infiniti-News-Compose-MultiPlatform.git
 cd Infiniti-News-Compose-MultiPlatform
 ```
 
