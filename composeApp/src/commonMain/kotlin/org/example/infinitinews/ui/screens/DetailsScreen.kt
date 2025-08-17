@@ -23,15 +23,16 @@ import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import net.thauvin.erik.urlencoder.UrlEncoderUtil
+import org.example.infinitinews.data.model.Article
 
 @Composable
-fun DetailsScreen(urlToImage: String?, title:String?, description:String?, content:String?, navigateToBack: (() -> Unit)) {
+fun DetailsScreen(article: Article, navigateToBack: (() -> Unit)) {
     Column( modifier = Modifier.fillMaxSize().statusBarsPadding().systemBarsPadding()) {
         Box {
             AsyncImage(
                 modifier = Modifier
                     .fillMaxWidth(),
-                model = UrlEncoderUtil.decode(urlToImage!!),
+                model = UrlEncoderUtil.decode(article.urlToImage.orEmpty()),
                 contentDescription = null
             )
 
@@ -44,7 +45,7 @@ fun DetailsScreen(urlToImage: String?, title:String?, description:String?, conte
         }
         Text(
             modifier = Modifier.padding(horizontal = 5.dp),
-            text = title?:"",
+            text = article.title,
             style = TextStyle(
                 color = Color.Red,
                 textAlign = TextAlign.Justify,
@@ -54,7 +55,7 @@ fun DetailsScreen(urlToImage: String?, title:String?, description:String?, conte
         )
         Text(
             modifier = Modifier.padding(horizontal = 5.dp),
-            text = description?:"",
+            text = article.description.orEmpty(),
             style = TextStyle(
                 color = Color.DarkGray,
                 textAlign = TextAlign.Justify,
@@ -64,7 +65,7 @@ fun DetailsScreen(urlToImage: String?, title:String?, description:String?, conte
         )
         Text(
             modifier = Modifier.padding(horizontal = 5.dp),
-            text = content?:"",
+            text = article.content.orEmpty(),
             style = TextStyle(
                 color = Color.DarkGray,
                 textAlign = TextAlign.Justify,
