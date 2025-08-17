@@ -16,12 +16,12 @@ News app made in Compose Multiplatform with clean architecture using using MVI. 
 ## Installation
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/Hassaan10/Infiniti-News-Android.git
+git clone https://github.com/Hassaan10/Infiniti-News-Compose-MultiPlatform.git
 cd Infiniti-News-Compose-MultiPlatform
 ```
 
-### 3. Add your API key into Injector file
-X-Api-Key = 'YOUR_API_KEY';
+### 3. Add your API key into Constants file
+API_KEY = 'YOUR_API_KEY';
 
 
 
